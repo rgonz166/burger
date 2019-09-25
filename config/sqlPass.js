@@ -1,2 +1,2 @@
-var password = "pintas123";
+var password = "Enter your password here";
 module.exports = password;
