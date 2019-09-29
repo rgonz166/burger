@@ -8,5 +8,12 @@ module.exports = {
             // run callback function passing in result
             cb(result);
         })
+    },
+    insertOne: function(tableName,columnName,value, cb){
+        var query = "INSERT INTO ?? (??) VALUES (?)";
+        connection.query(query,[tableName,columnName,value],function(err,result){
+            if(err) throw err;
+            cb(result);
+        })
     }
 }
