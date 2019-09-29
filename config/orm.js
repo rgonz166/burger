@@ -15,5 +15,12 @@ module.exports = {
             if(err) throw err;
             cb(result);
         })
+    },
+    updateOne: function(tableName, columnName, newVal,itemId, cb){
+        var query = "UPDATE ?? SET ?? == ? WHERE id=?";
+        connection.query(query,[tableName,columnName,newVal,itemId],function(err,result){
+            if(err) throw err;
+            cb(result);
+        })
     }
 }
