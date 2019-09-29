@@ -1,10 +1,15 @@
 var orm = require('../config/orm');
 
 module.exports = {
-    viewAll: function(callback){
+    viewAll: function(cb){
         // READ/SELECT all records in database - reference orm.selectAll
         orm.selectAll("burgers",function(res){
-            callback(res);
+            cb(res);
+        });
+    },
+    insert: function(column,val,cb){
+        orm.insertOne("burgers",column,val,function(res){
+            cb(res);
         });
     }
 }
