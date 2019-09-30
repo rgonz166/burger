@@ -40,7 +40,7 @@ app.use('/',routes);
 // Starts the server to begin listening
 // =============================================================
 
-var port = 3000;
+var port = process.env.PORT || 8080;
 app.listen(port, function() {
   console.log("App listening on PORT " + port);
 });
