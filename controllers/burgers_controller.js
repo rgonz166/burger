@@ -7,7 +7,12 @@ var burger = require('../models/burger.js');
 // =============================================
 // Get Route
 router.get("/",function(req,res){
-
+    burger.viewAll(function(burgerData){
+        console.log('Burger Data: '+ burgerData);
+        res.render('index',{
+            burger:burgerData
+        })
+    })
 });
 // Put Route
 router.put("/burgers/update",function(req,res){
