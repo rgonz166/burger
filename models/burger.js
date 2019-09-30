@@ -14,8 +14,8 @@ module.exports = {
         });
     },
     // update an item
-    update: function(column, newVal, itemId,cb){
-        orm.updateOne("burgers",column,newVal,itemId,function(res){
+    update: function(itemId,cb){
+        orm.updateOne("burgers","devoured","true",itemId,function(res){
             cb(res);
         });
     }
