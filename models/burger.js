@@ -8,8 +8,8 @@ module.exports = {
         });
     },
     // insert one new item
-    insert: function(column,val,cb){
-        orm.insertOne("burgers",column,val,function(res){
+    insert: function(val,cb){
+        orm.insertOne("burgers","burger_name",val,function(res){
             cb(res);
         });
     },

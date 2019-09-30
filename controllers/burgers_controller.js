@@ -16,7 +16,7 @@ router.get("/",function(req,res){
 });
 // Post Route
 router.post("/burgers/create",function(req,res){
-    burger.insert("burger_name",req.params.burger_name,function(result){
+    burger.insert(req.params.burger_name,function(result){
         console.log(result);
         res.redirect("/");
     });
