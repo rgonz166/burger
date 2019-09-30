@@ -23,7 +23,10 @@ router.post("/burgers/create",function(req,res){
 });
 // Put Route
 router.put("/burgers/update",function(req,res){
-    
+    burger.update(req.params.burger_id,function(result){
+        console.log(result);
+        res.redirect("/");
+    });
 });
 
 module.exports = router;
