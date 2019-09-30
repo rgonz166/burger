@@ -10,20 +10,19 @@ router.get("/",function(req,res){
     burger.viewAll(function(burgerData){
         console.log(burgerData);
         res.render('index',{
-            burger:burgerData
+            burger_data:burgerData
         })
     })
 });
 // Post Route
 router.post("/burgers/create",function(req,res){
-    burger.insert(req.params.burger_name,function(result){
-        console.log(result);
+    burger.insert(req.body.burger_name,function(result){
         res.redirect("/");
     });
 });
 // Put Route
-router.put("/burgers/update",function(req,res){
-    burger.update(req.params.burger_id,function(result){
+router.post("/burgers/update/:id",function(req,res){
+    burger.update(req.params.id,function(result){
         console.log(result);
         res.redirect("/");
     });

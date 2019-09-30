@@ -15,7 +15,7 @@ module.exports = {
     },
     // update an item
     update: function(itemId,cb){
-        orm.updateOne("burgers","devoured","true",itemId,function(res){
+        orm.updateOne("burgers","devoured",true,itemId,function(res){
             cb(res);
         });
     }
