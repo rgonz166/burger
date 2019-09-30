@@ -8,19 +8,21 @@ var burger = require('../models/burger.js');
 // Get Route
 router.get("/",function(req,res){
     burger.viewAll(function(burgerData){
-        console.log('Burger Data: '+ burgerData);
+        console.log(burgerData);
         res.render('index',{
             burger:burgerData
         })
     })
 });
-// Put Route
-router.put("/burgers/update",function(req,res){
-
-});
 // Post Route
 router.post("/burgers/create",function(req,res){
-
+    burger.insert("burger_name",req.params.burger_name,function(result){
+        console.log(result);
+        res.redirect("/");
+    });
 });
-
+// Put Route
+router.put("/burgers/update",function(req,res){
+    
+});
 module.exports = router;
